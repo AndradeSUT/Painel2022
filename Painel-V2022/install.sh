@@ -60,7 +60,7 @@ echo -e "\033[1;33m AGUARDE..."
 echo ""
 clear
 cd /var/www/html || exit
-wget https://github.com/wellzin-blip/new2022/raw/master/Painel-V2022/gestorssh.zip > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AndradeSUT/Painel2022/main/Painel-V2022/gestorssh.zip > /dev/null 2>&1
 unzip gestorssh.zip > /dev/null 2>&1
 rm -rf gestorssh.zip index.html > /dev/null 2>&1
 (echo yes; echo yes; echo yes; echo yes) | composer install > /dev/null 2>&1
@@ -73,7 +73,7 @@ sed -i "s;1020;$senha;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 fi
 sleep 1
 cd || exit
-wget https://github.com/wellzin-blip/new2022/raw/master/Painel-V2022/bdgestorssh.sql > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AndradeSUT/Painel2022/main/Painel-V2022/bdgestorssh.sql > /dev/null 2>&1
 sleep 1
 if [[ -e "$HOME/bdgestorssh.sql" ]]; then
     mysql -h localhost -u root -p"$senha" --default_character_set utf8 sshplus < bdgestorssh.sql
